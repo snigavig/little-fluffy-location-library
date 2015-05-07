@@ -24,11 +24,12 @@ import android.text.format.DateFormat;
 import java.io.Serializable;
 
 /**
- * An object containing a snapshot of the best we currently know about location.
- * <p>
- * Project home and documentation: {@link 'code.google.com/p/little-fluffy-location-library'}
+ * A simple-to-use library that broadcasts location updates to your app without killing your battery.
+ * <p/>
+ * Project original home and documentation: code.google.com/p/little-fluffy-location-library
+ * Currently supported here: https://github.com/snigavig/little-fluffy-location-library
  *
- * @author Kenton Price, Little Fluffy Toys Ltd - {@link 'www.littlefluffytoys.mobi'}
+ * @author Kenton Price, Little Fluffy Toys Ltd - www.littlefluffytoys.mobi
  */
 public class LocationInfo implements Serializable {
 

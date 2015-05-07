@@ -35,7 +35,6 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -82,7 +81,7 @@ public class LocationBroadcastService extends Service implements GoogleApiClient
      */
     private final IBinder mBinder = new Binder() {
         @Override
-        protected boolean onTransact(int code, @NonNull Parcel data, @NonNull Parcel reply, int flags) throws RemoteException {
+        protected boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
             return super.onTransact(code, data, reply, flags);
         }
     };
