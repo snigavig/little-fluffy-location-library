@@ -25,7 +25,6 @@ import java.io.Serializable;
 
 /**
  * A simple-to-use library that broadcasts location updates to your app without killing your battery.
- * <p/>
  * Project original home and documentation: code.google.com/p/little-fluffy-location-library
  * Currently supported here: https://github.com/snigavig/little-fluffy-location-library
  *

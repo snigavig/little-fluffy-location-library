@@ -32,7 +32,6 @@ import android.util.Log;
 /**
  * This Receiver class is used to listen for Broadcast Intents that announce
  * that a location change has occurred while this application isn't visible.
- * <p/>
  * Where possible, this is triggered by a Passive Location listener.
  */
 public class PassiveLocationChangedReceiver extends BroadcastReceiver {
@@ -124,7 +123,6 @@ public class PassiveLocationChangedReceiver extends BroadcastReceiver {
     /**
      * When a new location is received, extract it from the Intent and use
      * it to start the Service used to update the list of nearby places.
-     * <p/>
      * This is the Passive receiver, used to receive Location updates from
      * third party apps when the Activity is not visible.
      */

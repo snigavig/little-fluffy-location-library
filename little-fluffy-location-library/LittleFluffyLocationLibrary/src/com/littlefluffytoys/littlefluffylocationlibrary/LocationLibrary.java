@@ -40,7 +40,6 @@ import java.util.List;
 
 /**
  * A simple-to-use library that broadcasts location updates to your app without killing your battery.
- * <p/>
  * Project original home and documentation: code.google.com/p/little-fluffy-location-library
  * Currently supported here: https://github.com/snigavig/little-fluffy-location-library
  *
@@ -131,7 +130,6 @@ public class LocationLibrary implements GoogleApiClient.ConnectionCallbacks, Goo
     /**
      * To use this library, call initialiseLibrary from your Application's onCreate method,
      * having set up your manifest as detailed in the project documentation.
-     * <p/>
      * This constructor uses defaults specified in LocationLibraryConstants for alarmFrequency ({@link android.app.AlarmManager#INTERVAL_FIFTEEN_MINUTES AlarmManager.INTERVAL_FIFTEEN_MINUTES})
      * and locationMaximumAge ({@link android.app.AlarmManager#INTERVAL_HOUR AlarmManager.INTERVAL_HOUR}), and broadcastEveryLocationUpdate by default is false.
      *
@@ -207,7 +205,6 @@ public class LocationLibrary implements GoogleApiClient.ConnectionCallbacks, Goo
      * having set up your manifest as detailed in the project documentation.
      *
      * @param alarmFrequency     How often to broadcast a location update in milliseconds, if one was received.
-     *                           <p/>
      *                           For battery efficiency, this should be one of the available inexact recurrence intervals
      *                           recognised by {@link android.app.AlarmManager#setInexactRepeating(int, long, long, PendingIntent) AlarmManager.setInexactRepeating}.
      *                           You are not prevented from using any other value, but in that case Android's alarm manager uses setRepeating instead of setInexactRepeating,
@@ -227,7 +224,6 @@ public class LocationLibrary implements GoogleApiClient.ConnectionCallbacks, Goo
     /**
      * To use this library, call initialiseLibrary from your Application's onCreate method,
      * having set up your manifest as detailed in the project documentation.
-     * <p/>
      * This constructor uses defaults specified in LocationLibraryConstants for alarmFrequency ({@link android.app.AlarmManager#INTERVAL_FIFTEEN_MINUTES AlarmManager.INTERVAL_FIFTEEN_MINUTES})
      * and locationMaximumAge ({@link android.app.AlarmManager#INTERVAL_HOUR AlarmManager.INTERVAL_HOUR}).
      *
@@ -247,7 +243,6 @@ public class LocationLibrary implements GoogleApiClient.ConnectionCallbacks, Goo
      * having set up your manifest as detailed in the project documentation.
      *
      * @param alarmFrequency               How often to broadcast a location update in milliseconds, if one was received.
-     *                                     <p/>
      *                                     For battery efficiency, this should be one of the available inexact recurrence intervals
      *                                     recognised by {@link android.app.AlarmManager#setInexactRepeating(int, long, long, PendingIntent) AlarmManager.setInexactRepeating}.
      *                                     You are not prevented from using any other value, but in that case Android's alarm manager uses setRepeating instead of setInexactRepeating,
