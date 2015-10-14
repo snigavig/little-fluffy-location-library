@@ -99,7 +99,7 @@ public class PassiveLocationChangedReceiver extends BroadcastReceiver {
       
       if (lastLat != Long.MIN_VALUE) {
           // The tricky maths bit to calculate the distance between two points:
-          // dist = arccos(sin(lat1) · sin(lat2) + cos(lat1) · cos(lat2) · cos(lon1 - lon2)) · R
+          // dist = arccos(sin(lat1) Â· sin(lat2) + cos(lat1) Â· cos(lat2) Â· cos(lon1 - lon2)) Â· R
           int distanceBetweenInMetres = (int) (Math.acos(Math.sin(Math.toRadians(thisLat)) * Math.sin(Math.toRadians(lastLat)) + Math.cos(Math.toRadians(thisLat)) * Math.cos(Math.toRadians(lastLat)) * Math.cos(Math.toRadians(thisLong) - Math.toRadians(lastLong))) * 6371 * 1000);
           if (LocationLibrary.showDebugOutput) Log.d(LocationLibraryConstants.TAG, TAG + ": Distance from last reading: " + distanceBetweenInMetres + "m");
           

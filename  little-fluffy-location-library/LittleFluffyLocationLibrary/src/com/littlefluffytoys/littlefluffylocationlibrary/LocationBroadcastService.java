@@ -160,6 +160,10 @@ public class LocationBroadcastService extends Service {
                 // thrown if there are no providers, e.g. GPS is off
                 if (LocationLibrary.showDebugOutput) Log.w(LocationLibraryConstants.TAG, TAG + ": IllegalArgumentException during call to locationManager.requestSingleUpdate - probable cause is that all location providers are off. Details: " + ex.getMessage());
             }
+            catch (SecurityException ex) {
+                // thrown if there are no providers, e.g. GPS is off
+                if (LocationLibrary.showDebugOutput) Log.w(LocationLibraryConstants.TAG, TAG + ": SecurityException during call to locationManager.requestSingleUpdate - probable cause is that location permission is off. Details: " + ex.getMessage());
+            }
         }
         else { // pre-Gingerbread
             if (LocationLibrary.showDebugOutput) Log.d(LocationLibraryConstants.TAG, TAG + ": Force location updates (pre-Gingerbread), as current location is beyond the oldest location permitted");

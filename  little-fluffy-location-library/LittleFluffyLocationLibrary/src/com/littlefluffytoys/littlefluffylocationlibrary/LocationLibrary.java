@@ -77,10 +77,15 @@ public class LocationLibrary {
             final LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
             final Intent passiveIntent = new Intent(context, PassiveLocationChangedReceiver.class);
             final PendingIntent locationListenerPassivePendingIntent = PendingIntent.getBroadcast(context, 0, passiveIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-            locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 0, 0, locationListenerPassivePendingIntent);
+            try {
+                locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 0, 0, locationListenerPassivePendingIntent);
+                if (showDebugOutput) Log.d(LocationLibraryConstants.TAG, TAG + ": startAlarmAndListener completed");
+            } catch (SecurityException ex) {
+                // thrown if there are no providers, e.g. GPS is off
+                if (LocationLibrary.showDebugOutput) Log.w(LocationLibraryConstants.TAG, TAG + ": SecurityException during call to LocationLibrary.startAlarmAndListener - probable cause is that location permission is off. Details: " + ex.getMessage());
+            }
         }
 
-        if (showDebugOutput) Log.d(LocationLibraryConstants.TAG, TAG + ": startAlarmAndListener completed");
     }
     
     public static void stopAlarmAndListener(final Context context) {
